@@ -1,7 +1,3 @@
--- Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -17,4 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("config.keymaps")
 require("config.options")
-require("lazy").setup("plugins")
+require("lazy").setup({
+  spec = {
+    import = "plugins",
+  },
+  checker = {
+    enabled = true,
+  },
+})
