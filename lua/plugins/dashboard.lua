@@ -2,8 +2,6 @@ return {
 	"nvimdev/dashboard-nvim",
 	event = "VimEnter",
 	opts = function()
-		local logo = "\n"
-
 		local opts = {
 			theme = "doom",
 			hide = {
@@ -12,14 +10,13 @@ return {
 				statusline = false,
 			},
 			config = {
-				header = vim.split(logo, "\n"),
-        -- stylua: ignore
-        center = {
-          { action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
-          { action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
-          { action = "Neotree dir=~/.config/nvim/", desc = " Config", icon = " ", key = "c" },
-          { action = "qa", desc = " Quit", icon = " ", key = "q" },
-        },
+				header = {},
+				center = {
+					{ action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
+					{ action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
+					{ action = "Neotree dir=~/.config/nvim/", desc = " Config", icon = " ", key = "c" },
+					{ action = "qa", desc = " Quit", icon = " ", key = "q" },
+				},
 				footer = function()
 					local stats = require("lazy").stats()
 					local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
@@ -46,4 +43,5 @@ return {
 
 		return opts
 	end,
+	dependencies = { { "nvim-tree/nvim-web-devicons" } },
 }
