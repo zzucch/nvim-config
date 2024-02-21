@@ -2,7 +2,7 @@ return {
 	{
 		"catppuccin/nvim",
 
-		enabled = false,
+		--	enabled = false,
 
 		lazy = false,
 		name = "catppuccin",
@@ -15,7 +15,7 @@ return {
 	{
 		"rebelot/kanagawa.nvim",
 
-		-- enabled = false,
+		enabled = false,
 
 		lazy = false,
 		priority = 1000,

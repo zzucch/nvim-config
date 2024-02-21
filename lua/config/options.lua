@@ -17,12 +17,27 @@ vim.opt.showmatch = true
 
 -- clipboard
 vim.opt.clipboard = "unnamedplus"
-vim.opt.pumblend = 10
 
 -- lines
 vim.opt.number = true -- Print line number
 vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.cursorline = true -- Enable highlighting of the current line
 
+-- netrw
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+
+-- qol
 vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.termguicolors = true -- True color support
+vim.opt.pumblend = 10
+
+-- vim.opt.colorcolumn = "80"
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+-- netrw
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
