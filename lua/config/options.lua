@@ -39,6 +39,7 @@ vim.opt.signcolumn = "yes"
 -- undo
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+vim.opt.swapfile = false
 
 -- netrw
 vim.g.netrw_browse_split = 0
