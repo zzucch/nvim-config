@@ -32,9 +32,11 @@ vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.termguicolors = true -- True color support
 vim.opt.pumblend = 10
 
--- vim.opt.colorcolumn = "80"
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
+-- vim.opt.colorcolumn = "80"
+
+-- undo
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
