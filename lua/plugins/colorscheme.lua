@@ -8,14 +8,15 @@ return {
 		config = function()
 			require("catppuccin").setup({
 				transparent_background = true,
+				show_end_of_buffer = false,
 				term_colors = true,
 				styles = {
 					comments = {},
 					conditionals = {},
 				},
+				-- flavour = "latte"
 			})
 
-			-- require("catppuccin").setup({ flavour = "latte" })
 			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
