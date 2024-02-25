@@ -21,7 +21,7 @@ vim.opt.clipboard = "unnamedplus"
 -- lines
 vim.opt.number = true -- Print line number
 vim.opt.relativenumber = true -- Relative line numbers
-vim.opt.cursorline = true -- Enable highlighting of the current line
+vim.opt.cursorline = false
 
 -- netrw
 vim.g.netrw_browse_split = 0
