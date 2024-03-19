@@ -24,7 +24,7 @@ return {
 			cmp_lsp.default_capabilities()
 		)
 
-    require("luasnip.loaders.from_vscode").lazy_load()
+		require("luasnip.loaders.from_vscode").lazy_load()
 		require("fidget").setup()
 		require("mason").setup()
 
@@ -33,10 +33,24 @@ return {
 				"lua_ls",
 				"bashls",
 				"gopls",
+				"dockerls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup({})
+				end,
+				["bashls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.bashls.setup({
+						capabilities = capabilities,
+						settings = {
+							shellcheck = {
+								enable = true,
+								executable = "shellcheck",
+								arguments = { "--format", "json" },
+							},
+						},
+					})
 				end,
 				["lua_ls"] = function()
 					local lspconfig = require("lspconfig")

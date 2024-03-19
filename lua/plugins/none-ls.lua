@@ -22,9 +22,8 @@ return {
           extra_args = { "--enable-all" },
         }),
         null_ls.builtins.diagnostics.staticcheck,
+        null_ls.builtins.diagnostics.hadolint,
       }
-
-      vim.keymap.set({ "n", "v" }, "<C-A-l>", vim.lsp.buf.format, {})
     end,
   },
   {
