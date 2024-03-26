@@ -11,6 +11,7 @@ return {
         "gomod",
         "gowork",
         "gosum",
+        "html",
         "lua",
         "vimdoc",
       },

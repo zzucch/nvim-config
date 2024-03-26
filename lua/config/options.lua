@@ -1,11 +1,13 @@
 -- indentation
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2     -- Size of an indent
-vim.opt.expandtab = true   -- Use spaces instead of tabs
+vim.opt.shiftwidth = 2 -- Size of an indent
+vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.smartindent = true -- Insert indents automatically
 vim.o.breakindent = true
 -- vim.o.autoindent = true
+
+vim.opt.wrap = false
 
 -- search and replace
 vim.opt.ignorecase = true
@@ -16,10 +18,12 @@ vim.opt.gdefault = true
 vim.opt.showmatch = true
 
 -- clipboard
-vim.opt.clipboard = "unnamedplus"
+if not vim.env.SSH_TTY then
+	vim.opt.clipboard = "unnamedplus"
+end
 
 -- lines
-vim.opt.number = true         -- Print line number
+vim.opt.number = true -- Print line number
 vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.cursorline = false
 
@@ -28,7 +32,7 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 
 -- qol
-vim.opt.confirm = true       -- Confirm to save changes before exiting modified buffer
+vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.termguicolors = true -- True color support
 vim.opt.pumblend = 10
 
@@ -46,3 +50,7 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 
 vim.opt.fillchars = { eob = " " }
+
+vim.g.markdown_recommended_style = 0
+
+vim.opt.wildmode = "longest:full,full"
