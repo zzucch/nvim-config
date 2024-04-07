@@ -30,10 +30,11 @@ return {
 
 		require("mason-lspconfig").setup({
 			ensure_installed = {
-				"lua_ls",
 				"bashls",
+				"bufls",
 				"gopls",
 				"dockerls",
+				"lua_ls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -52,20 +53,10 @@ return {
 						},
 					})
 				end,
-				["lua_ls"] = function()
+				["bufls"] = function()
 					local lspconfig = require("lspconfig")
-					lspconfig.lua_ls.setup({
+					lspconfig.bufls.setup({
 						capabilities = capabilities,
-						settings = {
-							Lua = {
-								diagnostics = {
-									globals = { "vim" },
-								},
-								completion = {
-									callSnippet = "Replace",
-								},
-							},
-						},
 					})
 				end,
 				["gopls"] = function()
@@ -113,6 +104,22 @@ return {
 									"-.nvim",
 								},
 								semanticTokens = true,
+							},
+						},
+					})
+				end,
+				["lua_ls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.lua_ls.setup({
+						capabilities = capabilities,
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = { "vim" },
+								},
+								completion = {
+									callSnippet = "Replace",
+								},
 							},
 						},
 					})
