@@ -35,10 +35,13 @@ return {
 				"gopls",
 				"dockerls",
 				"lua_ls",
+				"tsserver",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
-					require("lspconfig")[server_name].setup({})
+					require("lspconfig")[server_name].setup({
+						capabilities = capabilities,
+					})
 				end,
 				["bashls"] = function()
 					local lspconfig = require("lspconfig")
