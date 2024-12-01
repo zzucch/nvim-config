@@ -2,9 +2,16 @@
 function ColorMyPencils(color)
 	vim.cmd.colorscheme(color)
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	local groups = {
+		"Normal",
+		"NormalNC",
+		"CursorLine",
+		"CursorLineNC",
+	}
+
+	for _, group in ipairs(groups) do
+		vim.api.nvim_set_hl(0, group, { bg = "none" })
+	end
 end
 
 return {
@@ -44,6 +51,7 @@ return {
 			require("rose-pine").setup({
 				disable_background = true,
 			})
+
 			ColorMyPencils("rose-pine")
 		end,
 	},

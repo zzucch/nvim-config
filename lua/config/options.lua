@@ -1,53 +1,41 @@
--- indentation
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2 -- Size of an indent
-vim.opt.expandtab = true -- Use spaces instead of tabs
-vim.opt.smartindent = true -- Insert indents automatically
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 vim.o.breakindent = true
--- vim.o.autoindent = true
 
 vim.opt.wrap = false
 
--- search and replace
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-vim.opt.gdefault = true
 vim.opt.showmatch = true
 
--- clipboard
 if not vim.env.SSH_TTY then
 	vim.opt.clipboard = "unnamedplus"
 end
 
--- lines
-vim.opt.number = true -- Print line number
-vim.opt.relativenumber = true -- Relative line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.cursorline = false
+vim.opt.guicursor = ""
 
--- netrw
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 
--- qol
 vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
-vim.opt.termguicolors = true -- True color support
+vim.opt.termguicolors = true
 vim.opt.pumblend = 10
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "80"
 
--- undo
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.swapfile = false
-
--- netrw
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
 
 vim.opt.fillchars = { eob = " " }
 

@@ -32,10 +32,9 @@ return {
 			ensure_installed = {
 				"bashls",
 				"bufls",
-				"gopls",
 				"dockerls",
+				"gopls",
 				"lua_ls",
-				"tsserver",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -58,7 +57,7 @@ return {
 				end,
 				["bufls"] = function()
 					local lspconfig = require("lspconfig")
-					lspconfig.bufls.setup({
+					lspconfig.buf_ls.setup({
 						capabilities = capabilities,
 					})
 				end,
@@ -139,8 +138,8 @@ return {
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
-				["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-				["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+				["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
+				["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<Tab>"] = cmp.mapping.confirm({ select = true }),
 			}),
@@ -153,7 +152,7 @@ return {
 		})
 
 		vim.diagnostic.config({
-			-- update_in_insert = true,
+			update_in_insert = false,
 			float = {
 				focusable = false,
 				style = "minimal",
