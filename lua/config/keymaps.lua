@@ -17,7 +17,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
--- lsp
 vim.keymap.set({ "n", "v" }, "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
@@ -30,5 +29,5 @@ vim.keymap.set("n", "<leader>rf", vim.lsp.buf.references, {})
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 
 vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, {})
-vim.keymap.set("n", "[d", vim.diagnostic.goto_next, {})
-vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, {})
+vim.keymap.set("n", "<leader>j", vim.diagnostic.goto_next, {})
+vim.keymap.set("n", "<leader>k", vim.diagnostic.goto_prev, {})
