@@ -14,7 +14,7 @@ vim.opt.incsearch = true
 vim.opt.showmatch = true
 
 if not vim.env.SSH_TTY then
-	vim.opt.clipboard = "unnamedplus"
+    vim.opt.clipboard = "unnamedplus"
 end
 
 vim.opt.number = true
