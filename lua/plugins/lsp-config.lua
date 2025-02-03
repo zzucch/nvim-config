@@ -31,7 +31,7 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "bashls",
-                "bufls",
+                "buf_ls",
                 "dockerls",
                 "gopls",
                 "lua_ls",
@@ -55,7 +55,7 @@ return {
                         },
                     })
                 end,
-                ["bufls"] = function()
+                ["buf_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.buf_ls.setup({
                         capabilities = capabilities,
