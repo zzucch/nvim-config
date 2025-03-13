@@ -55,6 +55,18 @@ return {
                         },
                     })
                 end,
+                ["marksman"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.buf_ls.setup({
+                        capabilities = capabilities,
+                    })
+                end,
+                ["harper_ls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.buf_ls.setup({
+                        capabilities = capabilities,
+                    })
+                end,
                 ["buf_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.buf_ls.setup({
@@ -69,15 +81,7 @@ return {
                             gopls = {
                                 gofumpt = true,
                                 codelenses = {
-                                    gc_details = false,
-                                    generate = true,
-                                    regenerate_cgo = true,
-                                    run_govulncheck = true,
-                                    -- legacy:
-                                    -- test = true,
-                                    tidy = true,
-                                    upgrnilnessade_dependency = true,
-                                    vendor = true,
+                                    test = true,
                                 },
                                 hints = {
                                     assignVariableTypes = true,
@@ -89,9 +93,7 @@ return {
                                     rangeVariableTypes = true,
                                 },
                                 analyses = {
-                                    unusedvariable = true,
-                                    unusedwrite = true,
-                                    useany = true,
+                                    shadow = true,
                                 },
                                 usePlaceholders = true,
                                 completeUnimported = true,

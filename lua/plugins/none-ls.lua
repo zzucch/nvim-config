@@ -15,10 +15,6 @@ return {
                 null_ls.builtins.code_actions.impl,
                 null_ls.builtins.formatting.goimports,
                 null_ls.builtins.formatting.gofumpt,
-                null_ls.builtins.diagnostics.golangci_lint.with({
-                    -- extra_args = { "--enable-all" },
-                }),
-                null_ls.builtins.diagnostics.staticcheck,
                 null_ls.builtins.diagnostics.hadolint,
             }
         end,
