@@ -70,6 +70,7 @@ return {
 						settings = {
 							["harper-ls"] = {
 								linters = {
+									SpellCheck = false,
 									SentenceCapitalization = false,
 									SpelledNumbers = true,
 									Spaces = false,
