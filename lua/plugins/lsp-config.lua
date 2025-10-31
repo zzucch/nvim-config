@@ -61,25 +61,6 @@ return {
 						capabilities = capabilities,
 					})
 				end,
-				-- https://writewithharper.com/docs/integrations/neovim
-				-- https://github.com/Automattic/harper/tree/master/harper-core/src/linting
-				["harper_ls"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.harper_ls.setup({
-						capabilities = capabilities,
-						settings = {
-							["harper-ls"] = {
-								linters = {
-									SpellCheck = false,
-									SentenceCapitalization = false,
-									SpelledNumbers = true,
-									Spaces = false,
-								},
-								isolateEnglish = true,
-							},
-						},
-					})
-				end,
 				["buf_ls"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.buf_ls.setup({
@@ -92,6 +73,7 @@ return {
 						capabilities = capabilities,
 						settings = {
 							gopls = {
+								buildFlags = {"-tags=integration"},
 								gofumpt = true,
 								codelenses = {
 									test = true,

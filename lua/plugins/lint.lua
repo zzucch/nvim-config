@@ -3,7 +3,7 @@ return {
     config = function()
         local lint = require("lint")
         lint.linters_by_ft = {
-            go = { "golangcilint", "codespell" },
+            go = { "golangcilint" },
             json = { "jsonlint" },
             make = { "checkmake" },
             markdown = { "markdownlint" },
