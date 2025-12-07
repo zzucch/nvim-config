@@ -73,7 +73,7 @@ return {
 						capabilities = capabilities,
 						settings = {
 							gopls = {
-								buildFlags = {"-tags=integration"},
+								buildFlags = {"-tags=integration e2e"},
 								gofumpt = true,
 								codelenses = {
 									test = true,
