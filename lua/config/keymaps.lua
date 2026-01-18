@@ -7,6 +7,9 @@ vim.keymap.set({ "i", "n" }, "<Down>", "<Nop>")
 vim.keymap.set({ "i", "n" }, "<Left>", "<Nop>")
 vim.keymap.set({ "i", "n" }, "<Right>", "<Nop>")
 
+vim.keymap.set('n', 'к', 'r')
+vim.keymap.set('n', 'ы', 's')
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzz")
