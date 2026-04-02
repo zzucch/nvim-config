@@ -9,20 +9,40 @@ return {
             markdown = { "markdownlint" },
             sh = { "bash", "shellcheck" },
             zsh = { "shellcheck", "zsh" },
-            -- proto = { "protolint" }, -- too many warnings, might come back configuring it in the future
+            proto = { "protolint" },
             -- lua = { "luacheck" },
         }
 
+        -- lint.linters.golangcilint.args = {
+        --     "run",
+        --     "--out-format",
+        --     "json",
+        --     "--show-stats=false",
+        --     "--print-issued-lines=false",
+        --     "--issues-exit-code=0",
+        --     "--print-linter-name=false",
+        --     "--config",
+        --     os.getenv("HOME") .. "/.golangci.yaml",
+        --     function()
+        --         return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
+        --     end,
+        -- }
         lint.linters.golangcilint.args = {
             "run",
-            "--out-format",
-            "json",
-            "--show-stats=false",
-            "--print-issued-lines=false",
-            "--issues-exit-code=0",
-            "--print-linter-name=false",
             "--config",
             os.getenv("HOME") .. "/.golangci.yaml",
+            "--output.json.path=stdout",
+            "--output.text.path=",
+            "--output.tab.path=",
+            "--output.html.path=",
+            "--output.checkstyle.path=",
+            "--output.code-climate.path=",
+            "--output.junit-xml.path=",
+            "--output.teamcity.path=",
+            "--output.sarif.path=",
+            "--issues-exit-code=0",
+            "--show-stats=false",
+            "--path-mode=abs",
             function()
                 return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
             end,

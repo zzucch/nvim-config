@@ -7,8 +7,9 @@ vim.keymap.set({ "i", "n" }, "<Down>", "<Nop>")
 vim.keymap.set({ "i", "n" }, "<Left>", "<Nop>")
 vim.keymap.set({ "i", "n" }, "<Right>", "<Nop>")
 
-vim.keymap.set('n', 'к', 'r')
-vim.keymap.set('n', 'ы', 's')
+vim.keymap.set("n", "к", "r")
+vim.keymap.set("n", "ы", "s")
+vim.keymap.set("n", "ф", "a")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -41,3 +42,11 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "<leader>j", vim.diagnostic.goto_next, {})
 vim.keymap.set("n", "<leader>k", vim.diagnostic.goto_prev, {})
+
+vim.api.nvim_create_user_command("Fmt", function(opts)
+	if opts.range == 0 then
+		vim.cmd(".!fmt -w 80")
+	else
+		vim.cmd("'<,'>!fmt -w 80")
+	end
+end, { range = true })

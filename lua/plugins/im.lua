@@ -1,0 +1,22 @@
+return {}
+-- return {
+-- 	"chojs23/im-switch.nvim",
+-- 	build = "make build",
+-- 	config = function()
+-- 		require("im-switch").setup({
+-- 			-- Default input method ID (platform-specific defaults)
+-- 			-- macOS: 'com.apple.keylayout.ABC'
+-- 			-- WSL: 'en-US'
+-- 			-- Linux: 'us' (XKB), 'xkb:us::eng' (IBus), 'keyboard-us' (Fcitx)
+-- 			-- Windows: 'en-US'
+-- 			default_input = nil, -- Uses platform default
+--
+-- 			-- Auto-switch to default input in normal mode (default: true)
+-- 			auto_switch = true,
+--
+-- 			-- Auto-restore previous input in insert mode (default: false) (experimental)
+-- 			auto_restore = false,
+-- 		})
+-- 	end,
+-- 	event = "VeryLazy",
+-- }
