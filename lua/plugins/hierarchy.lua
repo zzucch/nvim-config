@@ -1,28 +1,9 @@
-return {
-    "jmacadie/telescope-hierarchy.nvim",
-    dependencies = {
-        {
-            "nvim-telescope/telescope.nvim",
-            dependencies = { "nvim-lua/plenary.nvim" },
-        },
-    },
-    keys = {
-        {
-            "<leader>hi",
-            "<cmd>Telescope hierarchy incoming_calls<cr>",
-        },
-        {
-            "<leader>ho",
-            "<cmd>Telescope hierarchy outgoing_calls<cr>",
-        },
-    },
-    opts = {
-        extensions = {
-            hierarchy = {},
-        },
-    },
-    config = function(_, opts)
-        require("telescope").setup(opts)
-        require("telescope").load_extension("hierarchy")
-    end,
-}
+require("telescope").setup({
+	extensions = {
+		hierarchy = {},
+	},
+})
+require("telescope").load_extension("hierarchy")
+
+vim.keymap.set("n", "<leader>hi", "<cmd>Telescope hierarchy incoming_calls<cr>")
+vim.keymap.set("n", "<leader>ho", "<cmd>Telescope hierarchy outgoing_calls<cr>")
