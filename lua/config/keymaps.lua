@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- i mean..
 vim.keymap.set({ "i", "n" }, "<Up>", "<Nop>")
 vim.keymap.set({ "i", "n" }, "<Down>", "<Nop>")
 vim.keymap.set({ "i", "n" }, "<Left>", "<Nop>")
@@ -50,3 +49,9 @@ vim.api.nvim_create_user_command("Fmt", function(opts)
 		vim.cmd("'<,'>!fmt -w 80")
 	end
 end, { range = true })
+
+vim.keymap.set("n", "<leader>fp", function()
+  local path = vim.fn.expand('%')
+  vim.fn.setreg('+', path)
+  vim.notify("" .. path, vim.log.levels.INFO, { title = "copy path" })
+end, { silent = true, desc = "copy relative file path" })
