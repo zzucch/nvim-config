@@ -122,7 +122,7 @@
       "src": "https://github.com/folke/trouble.nvim"
     },
     "vim-wakatime": {
-      "rev": "24495fb7cc9613eaf0ce45540fb8d096a30d08e9",
+      "rev": "7b53ba7882ba28b91b571fa4ffb2755378086837",
       "src": "https://github.com/wakatime/vim-wakatime"
     }
   }
