@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		local ok = pcall(vim.treesitter.start)
 		if not ok then
 			local available = require("nvim-treesitter.config").get_available()
-			if vim.tbl_contains(available, lang) then
+			if vim.tbl_contains(available, lang) and vim.fn.exepath("tree-sitter") ~= "" then
 				require("nvim-treesitter.install").install({ lang })
 			end
 		end

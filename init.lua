@@ -1,3 +1,5 @@
+vim.env.PATH = vim.env.PATH .. ":/opt/homebrew/bin:/usr/local/bin"
+
 vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/nvim-tree/nvim-web-devicons",
@@ -50,3 +52,4 @@ require("plugins.oil")
 require("plugins.cover")
 require("plugins.hierarchy")
 require("plugins.dap")
+require("plugins.wakatime")
